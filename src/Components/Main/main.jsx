@@ -20,8 +20,8 @@ function Main() {
                             <option>BA</option>
                             <option>CE</option>
                         </S.Select>
-                    <S.Input type="password" placeholder="Definir Senha" />
-                    <S.Input type="password" placeholder="Confirmar Senha" />
+                    <S.Input type="date" placeholder="Data Procedimento" />
+                    <S.Input type="text" placeholder="Informe Procedimento" />
                 </div>
                 <div>
                     <S.Label>
@@ -35,7 +35,7 @@ function Main() {
                     <S.Input type="password" placeholder="Confirmar Senha" />
                 </div>
                 <S.Container>
-                    <S.Button>ENVIAR</S.Button>
+                    <S.Button type="submit">ENVIAR</S.Button>
                 </S.Container>
             </S.Section>
         </S.Form>
