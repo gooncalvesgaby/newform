@@ -7,4 +7,7 @@ display: flex;
 justify-content: space-around;
 align-items: center;
 background: linear-gradient(to right, #f9989185, #ff4f4294);
+padding: 20px;
+width: 100%;
+color: #ffffffe3;
 `

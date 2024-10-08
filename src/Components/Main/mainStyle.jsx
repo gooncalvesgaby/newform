@@ -20,6 +20,7 @@ display: block;
 width: 15vw;
 text-align: center;
 font-size: 15px;
+font-weight: bold;
 `
 
 export const Input = styled.input`
@@ -47,6 +48,7 @@ height: 5vh;
 border: solid 1px black;
 border-radius: 1rem;
 background: #ecbcbc;
+cursor: pointer;
 `
 
 export const Container = styled.div`
