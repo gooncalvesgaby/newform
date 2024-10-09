@@ -1,41 +1,59 @@
 import * as S from "./mainStyle.jsx"
+import { useState } from "react"
 
 function Main() {
+
+    const [nome, setNome] = useState("")
+    const [cpf, setCpf] = useState("")
+    const [email, setEmail] = useState("")
+    const [estado, setEstado] = useState("")
+    const [data, setData] = useState("")
+    const [procedimento, setProcedimento] = useState("")
+    const [sexo, setSexo] = useState("")
+    const [senha, setSenha] = useState("")
+    const [confirma, setConfirma] = useState("")
+
+    function validar() {
+        
+    }
+    
+
+
     return(
         <S.Form>
             <S.Section>
                 <div>
-                    <S.Input type="text" placeholder="Digite seu nome" />
-                    <S.Input type="text" placeholder="Digite seu CPF" />
-                    <S.Input type="email" placeholder="Informe seu email" />
+                    <S.Input type="text" id="nome" placeholder="Digite seu nome" />
+                    <S.Input type="text" id="cpf" placeholder="Digite seu CPF" />
+                    <S.Input type="email" id="email" placeholder="Informe seu email" />
                 </div>
                 <div>
                     <S.Label>
                         Selecione seu Estado
                     </S.Label>
-                        <S.Select>
+                        <S.Select id="estado">
                             <option>SP</option>
                             <option>RN</option>
                             <option>RJ</option>
                             <option>BA</option>
                             <option>CE</option>
                         </S.Select>
-                    <S.Input type="date" placeholder="Data Procedimento" />
-                    <S.Input type="text" placeholder="Informe Procedimento" />
+                    <S.Input type="date" id="data" placeholder="Data Procedimento" />
+                    <S.Input type="text" id="procedimento" placeholder="Informe Procedimento" />
                 </div>
                 <div>
                     <S.Label>
                         Informe seu Sexo
                     </S.Label>
-                        <S.Select>
+                        <S.Select id="sexo">
                             <option>Feminino</option>
                             <option>Masculino</option>
                         </S.Select>
-                    <S.Input type="password" placeholder="Definir Senha" />
-                    <S.Input type="password" placeholder="Confirmar Senha" />
+                    <S.Input type="password" id="senha" placeholder="Definir Senha" />
+                    <S.Input type="password" id="confirma" placeholder="Confirmar Senha" />
                 </div>
                 <S.Container>
-                    <S.Button type="submit">ENVIAR</S.Button>
+                    <S.Button type="submit" onClick={validar}>ENVIAR</S.Button>
                 </S.Container>
             </S.Section>
         </S.Form>
