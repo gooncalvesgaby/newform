@@ -13,17 +13,20 @@ function Main() {
     const [senha, setSenha] = useState("")
     const [confirma, setConfirma] = useState("")
 
+    let regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/
+
     function validar() {
-        
+        if(!regexNome.test(nome) || nome =="") {
+            alert("Preencher nome correto")
+            return;
+        }
     }
     
-
-
     return(
         <S.Form>
             <S.Section>
                 <div>
-                    <S.Input type="text" id="nome" placeholder="Digite seu nome" />
+                    <S.Input type="text" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} placeholder="Digite seu nome" />
                     <S.Input type="text" id="cpf" placeholder="Digite seu CPF" />
                     <S.Input type="email" id="email" placeholder="Informe seu email" />
                 </div>
