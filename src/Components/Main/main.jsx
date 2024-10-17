@@ -12,12 +12,16 @@ function Main() {
     const [sexo, setSexo] = useState("")
     const [senha, setSenha] = useState("")
     const [confirma, setConfirma] = useState("")
+    const [senhaError, setSenhaError] = useState(false)
+    const [confirmaError, setConfirmaError] = useState(false)
 
     const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/
     const regexCpf = /^(?!.*(\d)(?:\D*\1){10})\d{3}\.\d{3}\.\d{3}-\d{2}$/
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     
     function validar() {
+        let valid = true 
+
         if(!regexNome.test(nome) || nome =="") {
             alert("Preencher nome correto")
             return
@@ -48,12 +52,26 @@ function Main() {
         }
         if(senha =="") {
             alert("Favor inserir senha")
+            setSenhaError(true)
+            valid = false
             return
+        }else {
+            setSenhaError(false)
         }
+
         if(confirma =="" || confirma !== senha) {
             alert("Favor confirmar senha")
+            setConfirmaError(true)
+            return
+        }else {
+            setConfirmaError(false)
+        }
+
+        if (!valid) {
             return
         }
+
+        alert("Formulário OK")
     }
     
     return(
@@ -86,8 +104,8 @@ function Main() {
                             <option>Feminino</option>
                             <option>Masculino</option>
                         </S.Select>
-                    <S.Input type="password" id="senha" value={senha} onChange={(e) => setSenha(e.target.value)} placeholder="Definir Senha" />
-                    <S.Input type="password" id="confirma" value={confirma} onChange={(e) => setConfirma(e.target.value)} placeholder="Confirmar Senha" />
+                    <S.Input type="password" id="senha" value={senha} onChange={(e) => setSenha(e.target.value)} required placeholder="Definir Senha" className={senhaError ? 'erro' : ''}/>
+                    <S.Input type="password" id="confirma" value={confirma} onChange={(e) => setConfirma(e.target.value)} required placeholder="Confirmar Senha" className={confirmaError ? 'erro' : ''} />
                 </div>
                 <S.Container>
                     <S.Button type="submit" onClick={validar}>ENVIAR</S.Button>

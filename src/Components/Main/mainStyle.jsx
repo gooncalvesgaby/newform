@@ -27,10 +27,15 @@ export const Input = styled.input`
 width: 20vw;
 height: 5vh;
 border-radius: 1rem;
-border: solid #6b0808cc 1px;
-color: #3c0404;
+border: solid 1px;
+color: black;
 text-align: center;
 margin: 1rem;
+
+&.erro {
+    border: 1px solid;
+    color: red;
+}
 `
 
 export const Select = styled.select`
